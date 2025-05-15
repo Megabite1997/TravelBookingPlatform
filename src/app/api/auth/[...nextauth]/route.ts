@@ -16,11 +16,14 @@ const handler = NextAuth({
       console.log("Profile:", profile);
       return true;
     },
-    async redirect({ url, baseUrl }) {
+    async redirect({ baseUrl }) {
       return baseUrl;
     },
     async session({ session, token }) {
-      session.user.id = token.sub;
+      if (session.user) {
+        (session.user as { id?: string }).id = token.sub ?? "";
+      }
+
       return session;
     },
     async jwt({ token, user }) {
