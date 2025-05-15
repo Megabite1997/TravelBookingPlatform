@@ -1,7 +1,7 @@
 import api from "./api";
 import { FlightParams, HotelParams, UserData } from "@/types/booking";
 
-export const fetchFlights = async (params: FlightParams) => {
+export const fetchFlights = async (params: any) => {
   const response = await api.get("/bookings/flights", { params });
   return response.data;
 };
