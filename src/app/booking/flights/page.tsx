@@ -1,13 +1,13 @@
 "use client";
 
-import { useSession } from "next-auth/react";
+// import { useSession } from "next-auth/react";
 
 export default function FlightsPage() {
-  const { data: session } = useSession();
+  // const { data: session } = useSession();
 
-  if (!session) {
-    return <p>Loading...</p>;
-  }
+  // if (!session) {
+  //   return <p>Loading...</p>;
+  // }
 
   return (
     <div>
